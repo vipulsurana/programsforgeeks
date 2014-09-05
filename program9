@@ -1,0 +1,42 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+
+void main()
+{
+clrscr();
+char str1[] = "ettejukuj",str2[20],ch;
+int i,j,k,m,flag=0;
+for(i=0;str1[i]!='\0';i++)
+{
+	m=strlen(str1)-1;
+	ch=str1[m];
+	for(j=m;j>0;j--)
+	{
+		str1[j]=str1[j-1];
+	}
+	str1[0]=ch;
+	j=m;
+	k=0;
+	strcpy(str2,str1);
+	while(k<j)
+	{
+		ch=str2[k];
+		str2[k]=str2[j];
+		str2[j]=ch;
+		k++;
+		j--;
+	}
+	if(strcmp(str1,str2)==0)
+	{
+		cout<<"1";
+		flag=1;
+		break;
+	}
+}
+if(flag==0)
+{
+	cout<<"0";
+}
+getch();
+}
