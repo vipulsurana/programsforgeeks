@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+struct str_rect{
+int top, bottom, left, right;
+}ract1,ract2;
+void checkOverlap(str_rect r1,str_rect r2){
+if(r1.bottom < r2.top || r2.bottom < r1.top)
+cout<<"Provided rectangles doesn't overlap";
+else if(r1.right < r2.left || r2.right < r1.left)
+cout<<"Provided rectangles doesn't overlap";
+else
+cout<<"Provided rectangles are overlapping";
+}
+int main(){
+ract1.top=10;ract1.left=10;ract1.right=20;ract1.bottom=20;
+ract2.top=30;ract2.left=30;ract2.right=40;ract2.bottom=40;
+checkOverlap(ract1,ract2);
+return 0;
+}
